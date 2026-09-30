@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ruta de la Materia - Ciencias Naturales | Quest Academy</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-surface": "#302f3d",
+            "on-secondary-container": "#006773",
+            "inverse-primary": "#c8bfff",
+            "primary-fixed-dim": "#c8bfff",
+            "surface-container-high": "#eae6f8",
+            "surface-variant": "#e4e0f3",
+            "on-surface-variant": "#474556",
+            "surface": "#fcf8ff",
+            "tertiary-fixed-dim": "#ffb870",
+            "surface-container": "#f0ebfe",
+            "background": "#fcf8ff",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "secondary-container": "#56eaff",
+            "outline": "#787588",
+            "on-primary-container": "#dcd5ff",
+            "error": "#ba1a1a",
+            "surface-tint": "#5a35f4",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#dcd8ea",
+            "on-secondary-fixed": "#001f24",
+            "tertiary-fixed": "#ffdcbe",
+            "primary": "#4200dd",
+            "on-primary-fixed": "#190064",
+            "on-primary-fixed-variant": "#4100db",
+            "on-background": "#1b1a27",
+            "secondary-fixed-dim": "#3dd9ed",
+            "on-tertiary-container": "#ffd1a8",
+            "on-tertiary-fixed": "#2c1600",
+            "outline-variant": "#c9c4d9",
+            "on-surface": "#1b1a27",
+            "primary-container": "#5b36f5",
+            "tertiary-container": "#8c5100",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#693c00",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#97f0ff",
+            "surface-bright": "#fcf8ff",
+            "secondary": "#006874",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#004f58",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#e5deff",
+            "surface-container-highest": "#e4e0f3",
+            "inverse-on-surface": "#f3eeff",
+            "tertiary": "#6a3d00",
+            "surface-container-low": "#f6f2ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-tablet": "1.5rem",
+            "gutter-sm": "0.5rem",
+            "gutter-xl": "2rem",
+            "gutter-md": "1rem",
+            "card-padding-sm": "0.75rem",
+            "card-padding-md": "1.25rem",
+            "touch-target-min": "3rem",
+            "gutter-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "card-padding-lg": "1.75rem",
+            "gutter-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-md": ["16px", {"lineHeight": "22px", "fontWeight": "700"}],
+            "headline-lg-mobile": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+            "label-sm": ["10px", {"lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "800"}],
+            "headline-md": ["20px", {"lineHeight": "26px", "fontWeight": "700"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+            "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+            "headline-xl-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "800"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 0.2; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    .pulse-ring-effect {
+      animation: pulse-ring 2.2s infinite ease-in-out;
+    }
+    @keyframes float-subtle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    .animate-float {
+      animation: float-subtle 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed pb-28">
+<!-- TOP APP BAR (Shared Component Anchor) -->
+<header class="sticky top-0 z-40 bg-surface dark:bg-inverse-surface border-b border-surface-variant dark:border-outline-variant shadow-sm w-full">
+<div class="max-w-3xl mx-auto flex justify-between items-center w-full px-margin-mobile h-touch-target-min">
+<!-- Leading: Avatar + App Identity -->
+<div class="flex items-center gap-3">
+<button aria-label="Volver a los mundos" class="flex items-center justify-center w-9 h-9 rounded-xl bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all active:scale-95 shadow-[0_2px_0_#c9c4d9]" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="relative w-8 h-8 rounded-full overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="A stylized 3D avatar of a confident young explorer tween wearing high-tech brass goggles and an adventurous utility scarf, vibrant game art style with bright soft studio lighting on clean solid background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKF4Dt3oDbZvjwEpRmznpRK-5QIQCt0js7n84k5ESlOyN5mOSDlrvQ8SJXdMcJNf-qBkITezw_W1iL_j4U7eqV5y2GdcluGbC-GZWJJ-kF9oDZkDMkGk3XO36aicTem1HUAteiJzU0fSvNFPMn0JB8MaZKlbNI-zXEUHQE5o38MC9d_hWgI0QbA1Bp1jBs4z6ra1r4PxvtZpBwwYQ7yJuCYGb0XJ2LU1T698UpGudJEo-zOKTTIzqX4Q"/>
+</div>
+<span class="text-title-lg font-title-lg text-primary dark:text-inverse-primary tracking-tight">Quest Academy</span>
+</div>
+</div>
+<!-- Trailing: Flame streak + XP Stats -->
+<div class="flex items-center gap-2">
+<!-- Streak Chip -->
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-tertiary-container shadow-sm border border-surface-variant">
+<span class="material-symbols-outlined text-amber-500" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-label-md font-label-md text-on-surface">5 DÍAS</span>
+</div>
+<!-- XP Chip -->
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm border border-secondary-container">
+<span class="material-symbols-outlined text-secondary" data-icon="bolt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-label-md font-label-md font-extrabold">1,280 XP</span>
+</div>
+</div>
+</div>
+</header>
+<!-- SUB-HEADER / SUBJECT SELECTOR BAR -->
+<section class="w-full bg-surface-container-lowest border-b border-surface-variant/70 shadow-sm py-3 px-margin-mobile">
+<div class="max-w-3xl mx-auto flex flex-wrap items-center justify-between gap-3">
+<!-- Subject Badge -->
+<div class="flex items-center gap-2">
+<span class="flex items-center justify-center w-8 h-8 rounded-xl bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-lg" data-icon="eco" data-weight="fill" style="font-variation-settings: 'FILL' 1;">eco</span>
+</span>
+<div>
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider block">Módulo 03 • Biología</span>
+<h1 class="text-title-md font-title-md text-on-surface">Ciencias Naturales - Mundo Vivo</h1>
+</div>
+</div>
+<!-- Star balance badge -->
+<div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-xl border border-surface-variant">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-base" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant font-bold">6/15 Estrellas</span>
+</div>
+</div>
+</section>
+<!-- MAIN ADVENTURE CANVAS -->
+<main class="flex-1 max-w-2xl mx-auto w-full px-margin-mobile pt-6 relative">
+<!-- Atmospheric Science Decorators (Vector / Micro-depth visuals) -->
+<div class="absolute -left-2 top-24 text-secondary/30 pointer-events-none select-none">
+<span class="material-symbols-outlined text-5xl transform -rotate-12" data-icon="biotech">biotech</span>
+</div>
+<div class="absolute -right-1 top-72 text-primary/20 pointer-events-none select-none">
+<span class="material-symbols-outlined text-5xl transform rotate-45" data-icon="scatter_plot">scatter_plot</span>
+</div>
+<div class="absolute left-4 bottom-52 text-secondary/25 pointer-events-none select-none">
+<span class="material-symbols-outlined text-5xl" data-icon="nature">nature</span>
+</div>
+<!-- Island Banner Intro Card -->
+<div class="relative w-full rounded-2xl bg-gradient-to-r from-secondary-container via-surface-container-high to-surface-variant p-card-padding-md border border-outline-variant/60 shadow-[0_4px_0_#c9c4d9] mb-8 overflow-hidden">
+<div class="relative z-10 flex items-center justify-between">
+<div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-lowest/80 text-secondary text-label-sm font-label-sm uppercase font-extrabold tracking-wider inline-block mb-1">Sendero Forestal</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Expedición Trófica</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Explora las interacciones biológicas y protege la biosfera.</p>
+</div>
+<div class="w-14 h-14 rounded-2xl bg-surface-container-lowest/90 border border-secondary/30 flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-3xl" data-icon="psychology_alt">psychology_alt</span>
+</div>
+</div>
+</div>
+<!-- SERPENTINE LEVEL PATHWAY CONTAINER -->
+<div class="relative py-4 flex flex-col items-center">
+<!-- SVG Path Connector (Responsive Serpentine Trail) -->
+<svg class="absolute top-8 left-1/2 -translate-x-1/2 w-full h-[620px] pointer-events-none max-w-md" fill="none" viewbox="0 0 320 620" xmlns="http://www.w3.org/2000/svg">
+<!-- Trail shadow/depth layer -->
+<path d="M 160 50 C 90 110, 90 150, 160 210 C 230 270, 230 310, 160 370 C 90 430, 90 470, 160 530" stroke="#E4E0F3" stroke-dasharray="14 10" stroke-linecap="round" stroke-width="12"></path>
+<!-- Completed path glow -->
+<path d="M 160 50 C 90 110, 90 150, 160 210 C 190 235, 205 255, 195 275" stroke="#56EAFF" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+<!-- NODO 1: Completado - La Célula Viva -->
+<div class="relative z-10 flex flex-col items-center mb-16 w-full group">
+<div class="flex items-center gap-4 w-full max-w-sm justify-center">
+<!-- Node Button (Completed) -->
+<div class="relative">
+<button class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container border-2 border-secondary flex flex-col items-center justify-center shadow-[0_5px_0_#006773] active:translate-y-1 active:shadow-[0_1px_0_#006773] transition-all" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="text-label-sm font-label-sm mt-0.5">NIVEL 1</span>
+</button>
+<!-- Badge 3 Estrellas -->
+<div class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-surface-container-lowest px-2 py-0.5 rounded-full border border-surface-variant flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-xs text-amber-500" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs text-amber-500" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs text-amber-500" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Description Pill Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-card-padding-sm shadow-[0_3px_0_#e4e0f3] w-48 text-left">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary font-bold uppercase">Dominado</span>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="verified">verified</span>
+</div>
+<h3 class="text-title-md font-title-md text-on-surface">La Célula Viva</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Membranas y núcleo</p>
+</div>
+</div>
+</div>
+<!-- NODO 2: Completado - Reino Vegetal y Fotosíntesis (Offset to Left) -->
+<div class="relative z-10 flex flex-col items-center mb-16 w-full">
+<div class="flex flex-row-reverse items-center gap-4 w-full max-w-sm justify-center">
+<!-- Node Button (Completed) -->
+<div class="relative">
+<button class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container border-2 border-secondary flex flex-col items-center justify-center shadow-[0_5px_0_#006773] active:translate-y-1 active:shadow-[0_1px_0_#006773] transition-all" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="text-label-sm font-label-sm mt-0.5">NIVEL 2</span>
+</button>
+<!-- Stars -->
+<div class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-surface-container-lowest px-2 py-0.5 rounded-full border border-surface-variant flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-xs text-amber-500" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs text-amber-500" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs text-amber-500" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Description Pill Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-card-padding-sm shadow-[0_3px_0_#e4e0f3] w-48 text-right">
+<div class="flex items-center justify-between flex-row-reverse">
+<span class="text-label-sm font-label-sm text-secondary font-bold uppercase">Dominado</span>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="verified">verified</span>
+</div>
+<h3 class="text-title-md font-title-md text-on-surface">Reino Vegetal</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Fotosíntesis y clorofila</p>
+</div>
+</div>
+</div>
+<!-- NODO 3: ACTIVO Y PALPITANTE - Cadena Trófica y Depredadores -->
+<div class="relative z-20 flex flex-col items-center mb-16 w-full">
+<!-- Animated Aura Ring for Active Node -->
+<div class="relative flex flex-col items-center">
+<div class="absolute -inset-4 rounded-full bg-primary/20 pulse-ring-effect pointer-events-none"></div>
+<div class="absolute -inset-2 rounded-full border-2 border-primary border-dashed animate-spin" style="animation-duration: 12s;"></div>
+<!-- Active Primary Node Button -->
+<button class="relative z-10 w-20 h-20 rounded-full bg-primary-container text-on-primary border-3 border-surface-container-lowest flex flex-col items-center justify-center shadow-[0_6px_0_#4100db] hover:shadow-[0_4px_0_#4100db] active:translate-y-1.5 active:shadow-[0_1px_0_#4100db] transition-all" type="button">
+<span class="material-symbols-outlined text-3xl animate-bounce" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="text-label-sm font-label-sm font-extrabold tracking-wider text-on-primary-container">NIVEL 3</span>
+</button>
+<!-- Bonus Mystery Chest Floating Icon -->
+<div class="absolute -top-3 -right-4 bg-tertiary-fixed border border-tertiary text-on-tertiary-fixed rounded-xl p-1 shadow-md flex items-center gap-1 animate-float">
+<span class="material-symbols-outlined text-sm text-amber-800" data-icon="featured_seasonal_and_gifts" data-weight="fill" style="font-variation-settings: 'FILL' 1;">featured_seasonal_and_gifts</span>
+<span class="text-label-sm font-label-sm font-extrabold pr-1">+150 XP</span>
+</div>
+</div>
+<!-- Expanded Active Level Card -->
+<div class="mt-4 bg-surface-container-lowest border-2 border-primary rounded-2xl p-card-padding-md shadow-[0_5px_0_#e4e0f3] w-full max-w-sm text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-secondary to-primary"></div>
+<div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm mb-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+            MISIÓN ACTUAL DISPONIBLE
+          </div>
+<h3 class="text-title-lg font-title-lg text-on-surface">Cadena Trófica y Depredadores</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 mb-4">
+            Aprende cómo fluye la energía entre productores, consumidores y descomponedores del bosque.
+          </p>
+<!-- Floating Active CTA Button -->
+<a class="inline-flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-[0_4px_0_#190064] hover:bg-primary-container active:translate-y-1 active:shadow-none transition-all" href="#jugar">
+<span class="material-symbols-outlined text-xl" data-icon="sports_esports">sports_esports</span>
+<span>¡Jugar Nivel 3!</span>
+</a>
+</div>
+</div>
+<!-- NODO 4: Bloqueado - Ecosistemas Marinos -->
+<div class="relative z-10 flex flex-col items-center mb-16 w-full opacity-80 group">
+<div class="flex items-center gap-4 w-full max-w-sm justify-center">
+<!-- Locked Node Button -->
+<div class="relative">
+<button class="w-16 h-16 rounded-full bg-surface-container-high text-outline border-2 border-outline-variant flex flex-col items-center justify-center shadow-[0_4px_0_#c9c4d9] cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-label-sm font-label-sm mt-0.5 text-on-surface-variant">NIVEL 4</span>
+</button>
+</div>
+<!-- Description Pill Card -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-card-padding-sm shadow-[0_2px_0_#e4e0f3] w-48 text-left">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline font-bold uppercase">Bloqueado</span>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="lock">lock</span>
+</div>
+<h3 class="text-title-md font-title-md text-outline">Ecosistemas Marinos</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant/70">Requiere superar Nivel 3</p>
+</div>
+</div>
+</div>
+<!-- NODO 5: JEFE DE UNIDAD / DESAFÍO ESPECIAL -->
+<div class="relative z-10 flex flex-col items-center mb-6 w-full">
+<div class="w-full max-w-md bg-gradient-to-b from-surface-container-highest to-surface-container rounded-2xl border-2 border-outline-variant p-card-padding-md shadow-[0_5px_0_#c9c4d9] text-center relative overflow-hidden">
+<!-- Golden Boss Badge Header -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-label-md font-label-md uppercase tracking-wider mb-3 shadow-sm border border-tertiary/20">
+<span class="material-symbols-outlined text-base text-amber-800" data-icon="military_tech">military_tech</span>
+<span>Jefe de Unidad • Examen de Guardián</span>
+</div>
+<!-- Boss Icon Circle -->
+<div class="mx-auto w-20 h-20 rounded-2xl bg-surface-container-lowest border-2 border-primary/40 flex items-center justify-center shadow-[0_4px_0_#c9c4d9] mb-3">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="emoji_events" data-weight="fill" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Gran Desafío del Guardián de la Tierra</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 mb-4 max-w-xs mx-auto">
+            Demuestra tus poderes científicos ante el Guardián Ancestral para ganar el Emblema Supremo de la Biosfera.
+          </p>
+<!-- Locked Challenge Button -->
+<button class="w-full py-2.5 px-4 rounded-xl bg-surface-variant text-outline font-label-md text-label-md flex items-center justify-center gap-2 cursor-not-allowed border border-outline-variant" disabled="" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+<span>Desbloquea completando 4 niveles</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Floating Action Strip (Contextual Mission Resume Bar) -->
+<div class="fixed bottom-20 left-0 right-0 z-30 px-margin-mobile flex justify-center pointer-events-none">
+<div class="pointer-events-auto max-w-md w-full bg-surface-container-lowest/95 backdrop-blur-md border-2 border-primary/20 p-2.5 rounded-2xl shadow-lg flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 pl-1.5">
+<div class="w-9 h-9 rounded-xl bg-primary-fixed text-primary flex items-center justify-center font-bold text-title-md">
+            3
+          </div>
+<div>
+<span class="text-label-sm font-label-sm text-primary uppercase block">En progreso</span>
+<span class="text-label-lg font-label-lg text-on-surface font-extrabold truncate max-w-[150px] sm:max-w-xs block">Cadena Trófica</span>
+</div>
+</div>
+<button class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold shadow-[0_3px_0_#190064] active:translate-y-0.5 active:shadow-none transition-all flex items-center gap-1" type="button">
+<span>Continuar</span>
+<span class="material-symbols-outlined text-base" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BOTTOM NAVBAR (Shared Component Anchor) -->
+<!-- Contextual State Lock: Active Destination mapped to 'Map' ("Mapa de Niveles") -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-sm py-gutter-xs bg-surface-container-lowest dark:bg-inverse-surface border-t-2 border-surface-variant dark:border-outline-variant shadow-md">
+<!-- Tab 1: Missions (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1.5 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-0.5 active:shadow-none transition-all duration-100 rounded-xl" href="#missions">
+<span class="material-symbols-outlined text-2xl" data-icon="explore">explore</span>
+<span class="text-label-sm font-label-sm mt-0.5">Missions</span>
+</a>
+<!-- Tab 2: Map (ACTIVE MATCH FOR MAPA DE NIVELES) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container dark:bg-inverse-primary dark:text-on-primary-fixed rounded-xl px-3 py-1.5 shadow-[0_3px_0_#4100db] hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-0.5 active:shadow-none transition-all duration-100" href="#map">
+<span class="material-symbols-outlined text-2xl text-on-primary-container" data-icon="map" data-weight="fill" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-bold">Map</span>
+</a>
+<!-- Tab 3: Challenge (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1.5 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-0.5 active:shadow-none transition-all duration-100 rounded-xl" href="#challenge">
+<span class="material-symbols-outlined text-2xl" data-icon="quiz">quiz</span>
+<span class="text-label-sm font-label-sm mt-0.5">Challenge</span>
+</a>
+<!-- Tab 4: Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1.5 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-0.5 active:shadow-none transition-all duration-100 rounded-xl" href="#profile">
+<span class="material-symbols-outlined text-2xl" data-icon="emoji_events">emoji_events</span>
+<span class="text-label-sm font-label-sm mt-0.5">Profile</span>
+</a>
+</nav>
+<!-- Inline micro-interactions logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Audio-visual tactile feedback simulation for buttons
+      const buttons = document.querySelectorAll('button:not([disabled]), a[href^="#"]');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          // Micro scale-down feel
+          btn.classList.add('scale-95');
+          setTimeout(() => btn.classList.remove('scale-95'), 120);
+        });
+      });
+    });
+  </script>
+</body></html>

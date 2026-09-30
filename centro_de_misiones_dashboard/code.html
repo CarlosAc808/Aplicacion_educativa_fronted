@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quest Academy - Centro de Misiones</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS Play CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-surface": "#302f3d",
+            "on-secondary-container": "#006773",
+            "inverse-primary": "#c8bfff",
+            "primary-fixed-dim": "#c8bfff",
+            "surface-container-high": "#eae6f8",
+            "surface-variant": "#e4e0f3",
+            "on-surface-variant": "#474556",
+            "surface": "#fcf8ff",
+            "tertiary-fixed-dim": "#ffb870",
+            "surface-container": "#f0ebfe",
+            "background": "#fcf8ff",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "secondary-container": "#56eaff",
+            "outline": "#787588",
+            "on-primary-container": "#dcd5ff",
+            "error": "#ba1a1a",
+            "surface-tint": "#5a35f4",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#dcd8ea",
+            "on-secondary-fixed": "#001f24",
+            "tertiary-fixed": "#ffdcbe",
+            "primary": "#4200dd",
+            "on-primary-fixed": "#190064",
+            "on-primary-fixed-variant": "#4100db",
+            "on-background": "#1b1a27",
+            "secondary-fixed-dim": "#3dd9ed",
+            "on-tertiary-container": "#ffd1a8",
+            "on-tertiary-fixed": "#2c1600",
+            "outline-variant": "#c9c4d9",
+            "on-surface": "#1b1a27",
+            "primary-container": "#5b36f5",
+            "tertiary-container": "#8c5100",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#693c00",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#97f0ff",
+            "surface-bright": "#fcf8ff",
+            "secondary": "#006874",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#004f58",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#e5deff",
+            "surface-container-highest": "#e4e0f3",
+            "inverse-on-surface": "#f3eeff",
+            "tertiary": "#6a3d00",
+            "surface-container-low": "#f6f2ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-tablet": "1.5rem",
+            "gutter-sm": "0.5rem",
+            "gutter-xl": "2rem",
+            "gutter-md": "1rem",
+            "card-padding-sm": "0.75rem",
+            "card-padding-md": "1.25rem",
+            "touch-target-min": "3rem",
+            "gutter-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "card-padding-lg": "1.75rem",
+            "gutter-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "700" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "800" }],
+            "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "800" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col pb-28 select-none">
+<!-- TOP APP BAR (Shared Component: TopAppBar with tactile gaming HUD specs) -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-margin-mobile h-touch-target-min max-w-5xl mx-auto">
+<!-- Leading: Avatar + Player Rank / Level -->
+<div class="flex items-center gap-gutter-sm active:scale-95 transition-transform duration-150 cursor-pointer">
+<div class="relative w-11 h-11 rounded-full p-0.5 bg-primary shadow-[0_3px_0_#190064] flex-shrink-0">
+<img class="w-full h-full rounded-full object-cover bg-surface-container-highest" data-alt="A stylized 3D digital avatar of a cool tween explorer cadet wearing sleek brass-rimmed high-tech adventure goggles and a modern khaki explorer cap. The character has an adventurous confident smile and an explorer merit pin. Clean vector 3D animation style with soft studio lighting and vibrant saturated tones suited for a modern gamified learning app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy6uZrZc1fuB_qSX0z6h3AiSbB1tayM65hsFUtzm9SaHTo-WbSH2kKCVQrck8DeyYeZHGlJ0TlnmR-uEJG5wXiBBRWfLJZTJoR1eR3Y4Z6RWJGSzF12Pj4GiavQqWu35Ie2B9XObf4EGbgcQfz0As6KArrnFRhW-jsAcJdESvayKP_zFlfxoBt2tarruKnOjw7K5jUXgpuYoVglzXQOd2t7V_Ie0Rod9dzPTpW3cwTStgqH1voXBP18w"/>
+<span class="absolute -bottom-1 -right-1 bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded-full border-2 border-surface-container-lowest font-bold">12</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md leading-tight text-primary dark:text-inverse-primary tracking-tight">Quest Academy</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold tracking-wider">CADETE ESPACIAL</span>
+</div>
+</div>
+<!-- Trailing: HUD Counters (XP + Fire Streak) -->
+<div class="flex items-center gap-gutter-sm">
+<!-- Gems / XP Pill -->
+<div class="flex items-center gap-1.5 bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant shadow-[0_2px_0_#c9c4d9]">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="diamond" data-weight="fill" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="font-label-md text-label-md text-primary font-extrabold">+450 XP</span>
+</div>
+<!-- Flame Streak Counter -->
+<div class="flex items-center gap-1 bg-tertiary-fixed px-3 py-1.5 rounded-full border border-tertiary-fixed-dim shadow-[0_2px_0_#ffb870] active:scale-95 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined text-tertiary-container text-xl animate-pulse" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-md text-label-md text-on-tertiary-fixed font-black">5 DÍAS</span>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN VIEW CONTAINER -->
+<main class="flex-1 w-full max-w-5xl mx-auto px-margin-mobile pt-gutter-md flex flex-col gap-gutter-lg">
+<!-- 1. MISIÓN DEL DÍA (Hero Card with 2.5D Depth & Chest Box) -->
+<section class="w-full">
+<div class="bg-surface-container-lowest rounded-2xl p-card-padding-md border-2 border-primary-fixed shadow-[0_6px_0_#c8bfff] relative overflow-hidden transition-all duration-200">
+<!-- Top Subject Track Accent Strip -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-secondary-container to-tertiary-fixed-dim"></div>
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-gutter-md">
+<div class="flex-1 space-y-2">
+<div class="flex items-center gap-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full tracking-wider">MISIÓN DEL DÍA</span>
+<span class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                Expira en 4h 12m
+              </span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+              Expedición Cuántica: Nivel 3
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Completa 3 desafíos de cálculo mental y descifra el enigma estelar para abrir el tesoro.
+            </p>
+<!-- Glowing Progress Well Rail -->
+<div class="pt-2">
+<div class="flex justify-between items-center mb-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold">Progreso de la misión</span>
+<span class="font-label-md text-label-md text-primary font-extrabold">2 / 3 Completadas</span>
+</div>
+<div class="w-full h-4 bg-surface-container-high rounded-full overflow-hidden p-0.5 border border-outline-variant/40">
+<div class="h-full bg-gradient-to-r from-primary to-secondary-container rounded-full relative shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]" style="width: 66.6%;">
+<div class="absolute top-0 right-0 bottom-0 w-2 bg-surface-container-lowest opacity-75 rounded-full animate-ping"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Mystery Chest Reward Node -->
+<div class="flex flex-row md:flex-col items-center justify-between w-full md:w-auto bg-surface-container-low p-3 rounded-xl border border-surface-variant gap-3">
+<div class="relative flex items-center justify-center w-16 h-16 bg-surface-container-lowest rounded-2xl shadow-[0_4px_0_#e4e0f3] border border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-tertiary-container animate-bounce" data-icon="lock_open">lock_open</span>
+<span class="absolute -top-2 -right-2 bg-secondary-fixed-dim text-on-secondary-fixed font-label-sm text-label-sm px-1.5 py-0.5 rounded-full font-black border border-surface-container-lowest shadow-sm">+100</span>
+</div>
+<div class="text-left md:text-center">
+<span class="font-label-md text-label-md text-on-surface font-extrabold block">Cofre Cósmico</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Recompensa Lista</span>
+</div>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-4 py-2.5 rounded-xl shadow-[0_4px_0_#190064] active:translate-y-1 active:shadow-none transition-all duration-100 flex items-center gap-1 cursor-pointer">
+<span>¡Reclamar!</span>
+<span class="material-symbols-outlined text-base" data-icon="sparkles">arrow_back_ios_new</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. TUS 3 MATERIAS (Grid with Thematic Identity & 2.5D Push Buttons) -->
+<section class="space-y-gutter-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="auto_stories">auto_stories</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Tus 3 Materias</h3>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold cursor-pointer hover:underline">Ver todas</span>
+</div>
+<!-- Bento-style Card Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-md">
+<!-- MATERIA 1: MATEMÁTICAS DEL CAOS (Amber / Orange theme) -->
+<div class="bg-surface-container-lowest rounded-2xl border-2 border-tertiary-fixed shadow-[0_5px_0_#ffb870] flex flex-col justify-between overflow-hidden relative group">
+<!-- Top subject line -->
+<div class="h-2 w-full bg-tertiary-container"></div>
+<div class="p-card-padding-md flex-1 flex flex-col justify-between gap-gutter-md">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calculate">calculate</span>
+                  MATEMÁTICAS
+                </span>
+<span class="font-label-md text-label-md font-black text-tertiary-container">68%</span>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed/30 border border-tertiary-fixed-dim flex items-center justify-center text-tertiary-container shadow-[0_2px_0_#ffb870]">
+<span class="material-symbols-outlined text-2xl" data-icon="deployed_code" data-weight="fill" style="font-variation-settings: 'FILL' 1;">deployed_code</span>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface leading-snug">Matemáticas del Caos</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Tema: Fracciones y Geometría 3D</p>
+</div>
+</div>
+</div>
+<!-- Subject Progress Bar -->
+<div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden p-0.5 border border-tertiary-fixed mb-4">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 68%;"></div>
+</div>
+<!-- Push Button Action -->
+<button class="w-full bg-tertiary-container text-on-tertiary font-label-lg text-label-lg py-3 rounded-xl shadow-[0_4px_0_#432400] active:translate-y-1 active:shadow-none transition-all duration-100 flex items-center justify-center gap-2 cursor-pointer">
+<span>Continuar</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MATERIA 2: CIENCIAS Y UNIVERSO (Cyan / Blue theme) -->
+<div class="bg-surface-container-lowest rounded-2xl border-2 border-secondary-fixed shadow-[0_5px_0_#3dd9ed] flex flex-col justify-between overflow-hidden relative group">
+<!-- Top subject line -->
+<div class="h-2 w-full bg-secondary"></div>
+<div class="p-card-padding-md flex-1 flex flex-col justify-between gap-gutter-md">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="science">science</span>
+                  CIENCIAS
+                </span>
+<span class="font-label-md text-label-md font-black text-secondary">45%</span>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/40 border border-secondary-fixed-dim flex items-center justify-center text-secondary shadow-[0_2px_0_#3dd9ed]">
+<span class="material-symbols-outlined text-2xl" data-icon="public" data-weight="fill" style="font-variation-settings: 'FILL' 1;">public</span>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface leading-snug">Ciencias y Universo</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Tema: Ecosistemas y Gravedad</p>
+</div>
+</div>
+</div>
+<!-- Subject Progress Bar -->
+<div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden p-0.5 border border-secondary-fixed mb-4">
+<div class="h-full bg-secondary rounded-full" style="width: 45%;"></div>
+</div>
+<!-- Push Button Action -->
+<button class="w-full bg-secondary text-on-secondary font-label-lg text-label-lg py-3 rounded-xl shadow-[0_4px_0_#004f58] active:translate-y-1 active:shadow-none transition-all duration-100 flex items-center justify-center gap-2 cursor-pointer">
+<span>Continuar</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MATERIA 3: LENGUA Y CREADORES (Violet / Emerald Magic theme) -->
+<div class="bg-surface-container-lowest rounded-2xl border-2 border-primary-fixed shadow-[0_5px_0_#c8bfff] flex flex-col justify-between overflow-hidden relative group">
+<!-- Top subject line -->
+<div class="h-2 w-full bg-primary-container"></div>
+<div class="p-card-padding-md flex-1 flex flex-col justify-between gap-gutter-md">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full font-extrabold tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+                  LENGUAJE
+                </span>
+<span class="font-label-md text-label-md font-black text-primary">82%</span>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed/50 border border-primary-fixed-dim flex items-center justify-center text-primary shadow-[0_2px_0_#c8bfff]">
+<span class="material-symbols-outlined text-2xl" data-icon="history_edu" data-weight="fill" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface leading-snug">Lengua y Creadores</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Tema: Misterios y Ortografía Ninja</p>
+</div>
+</div>
+</div>
+<!-- Subject Progress Bar -->
+<div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden p-0.5 border border-primary-fixed mb-4">
+<div class="h-full bg-primary-container rounded-full" style="width: 82%;"></div>
+</div>
+<!-- Push Button Action -->
+<button class="w-full bg-primary-container text-on-primary font-label-lg text-label-lg py-3 rounded-xl shadow-[0_4px_0_#4100db] active:translate-y-1 active:shadow-none transition-all duration-100 flex items-center justify-center gap-2 cursor-pointer">
+<span>Continuar</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. TORNEO SEMANAL (Mini ranking con Liga de Plata) -->
+<section class="w-full pb-6">
+<div class="bg-surface-container-lowest rounded-2xl p-card-padding-md border-2 border-surface-variant shadow-[0_4px_0_#dcd8ea]">
+<!-- Header Torneo -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant border-2 border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-2xl text-outline" data-icon="military_tech" data-weight="fill" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface flex items-center gap-2">
+                Torneo Semanal: <span class="text-secondary font-extrabold">Liga de Plata</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Los 3 mejores ascienden a la codiciada Liga de Oro en 2 días</p>
+</div>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full font-bold">
+            Zona de Ascenso
+          </span>
+</div>
+<!-- Leaderboard Stack -->
+<div class="space-y-2">
+<!-- Posición 1 (Amigo) -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="font-label-lg text-label-lg font-black text-tertiary-container w-5 text-center">1</span>
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed-dim/40 border border-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-lg text-tertiary-container" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-on-surface block leading-tight">Leo El Astronauta</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nivel 14 • 1,280 XP</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-xl" data-icon="workspace_premium" data-weight="fill" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<!-- Posición 2 (Usuario Actual - Destacado) -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-primary-fixed/40 border-2 border-primary shadow-[0_3px_0_#5b36f5]">
+<div class="flex items-center gap-3">
+<span class="font-label-lg text-label-lg font-black text-primary w-5 text-center">2</span>
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold font-label-md">
+                TÚ
+              </div>
+<div>
+<span class="font-title-md text-title-md text-primary font-black block leading-tight">Cadete Espacial (Tú)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-bold">Nivel 12 • 980 XP</span>
+</div>
+</div>
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-black">
+              +45 Hoy
+            </span>
+</div>
+<!-- Posición 3 (Amiga) -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="font-label-lg text-label-lg font-black text-secondary w-5 text-center">3</span>
+<div class="w-9 h-9 rounded-full bg-secondary-fixed/50 border border-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="science">science</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-on-surface block leading-tight">Maya Científica</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nivel 11 • 920 XP</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-xl" data-icon="workspace_premium">workspace_premium</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BOTTOM NAVIGATION BAR (Shared Component: BottomNavBar) -->
+<!-- Executing mandatory tokens & active mapping: 'Missions' maps to current dashboard -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface shadow-md fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-sm py-gutter-xs">
+<!-- Tab 1: Missions (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container dark:bg-inverse-primary dark:text-on-primary-fixed rounded-xl px-3 py-1.5 shadow-[0_3px_0_#4100db] active:translate-y-0.5 active:shadow-none transition-all duration-100 min-w-[64px]" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="explore" data-weight="fill" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm font-bold tracking-tight">Missions</span>
+</a>
+<!-- Tab 2: Map (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1.5 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-0.5 active:shadow-none transition-all duration-100 min-w-[64px] rounded-xl" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="map">map</span>
+<span class="font-label-sm text-label-sm font-bold tracking-tight">Map</span>
+</a>
+<!-- Tab 3: Challenge (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1.5 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-0.5 active:shadow-none transition-all duration-100 min-w-[64px] rounded-xl" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="quiz">quiz</span>
+<span class="font-label-sm text-label-sm font-bold tracking-tight">Challenge</span>
+</a>
+<!-- Tab 4: Profile (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1.5 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-0.5 active:shadow-none transition-all duration-100 min-w-[64px] rounded-xl" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="emoji_events">emoji_events</span>
+<span class="font-label-sm text-label-sm font-bold tracking-tight">Profile</span>
+</a>
+</nav>
+<!-- Interactive feedback micro-script -->
+<script>
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Subtle haptic feel simulation
+        if (window.navigator && window.navigator.vibrate) {
+          window.navigator.vibrate(20);
+        }
+      });
+    });
+  </script>
+</body></html>

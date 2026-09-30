@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reto de Matemáticas: Fracciones en Acción - Quest Academy</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-surface": "#302f3d",
+            "on-secondary-container": "#006773",
+            "inverse-primary": "#c8bfff",
+            "primary-fixed-dim": "#c8bfff",
+            "surface-container-high": "#eae6f8",
+            "surface-variant": "#e4e0f3",
+            "on-surface-variant": "#474556",
+            "surface": "#fcf8ff",
+            "tertiary-fixed-dim": "#ffb870",
+            "surface-container": "#f0ebfe",
+            "background": "#fcf8ff",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "secondary-container": "#56eaff",
+            "outline": "#787588",
+            "on-primary-container": "#dcd5ff",
+            "error": "#ba1a1a",
+            "surface-tint": "#5a35f4",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#dcd8ea",
+            "on-secondary-fixed": "#001f24",
+            "tertiary-fixed": "#ffdcbe",
+            "primary": "#4200dd",
+            "on-primary-fixed": "#190064",
+            "on-primary-fixed-variant": "#4100db",
+            "on-background": "#1b1a27",
+            "secondary-fixed-dim": "#3dd9ed",
+            "on-tertiary-container": "#ffd1a8",
+            "on-tertiary-fixed": "#2c1600",
+            "outline-variant": "#c9c4d9",
+            "on-surface": "#1b1a27",
+            "primary-container": "#5b36f5",
+            "tertiary-container": "#8c5100",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#693c00",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#97f0ff",
+            "surface-bright": "#fcf8ff",
+            "secondary": "#006874",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#004f58",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#e5deff",
+            "surface-container-highest": "#e4e0f3",
+            "inverse-on-surface": "#f3eeff",
+            "tertiary": "#6a3d00",
+            "surface-container-low": "#f6f2ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-tablet": "1.5rem",
+            "gutter-sm": "0.5rem",
+            "gutter-xl": "2rem",
+            "gutter-md": "1rem",
+            "card-padding-sm": "0.75rem",
+            "card-padding-md": "1.25rem",
+            "touch-target-min": "3rem",
+            "gutter-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "card-padding-lg": "1.75rem",
+            "gutter-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-md": ["16px", {"lineHeight": "22px", "fontWeight": "700"}],
+            "headline-lg-mobile": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+            "label-sm": ["10px", {"lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "800"}],
+            "headline-md": ["20px", {"lineHeight": "26px", "fontWeight": "700"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+            "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+            "headline-xl-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "800"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-primary-fixed selection:text-primary">
+<!-- Sub-page Focused Flow: Bottom navigation is autonomously suppressed per the UX Semantic Shell Mandate -->
+<!-- Top Flow Header -->
+<header class="w-full bg-surface-container-lowest shadow-sm z-30 sticky top-0 px-margin-mobile md:px-margin-tablet py-gutter-sm flex flex-col gap-2">
+<div class="max-w-4xl w-full mx-auto flex items-center justify-between gap-gutter-md">
+<!-- Close Exit Button -->
+<button aria-label="Cerrar lección" class="w-touch-target-min h-touch-target-min flex items-center justify-center rounded-xl bg-surface-container text-on-surface-variant hover:bg-surface-variant active:scale-95 transition-transform duration-150 focus:outline-none">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<!-- Center Progress Rail -->
+<div class="flex-1 flex flex-col gap-1 max-w-md">
+<div class="flex justify-between items-center px-1">
+<span class="font-label-md text-label-md text-primary font-bold">PASO 7 DE 10</span>
+<span class="font-label-md text-label-md text-on-surface-variant">70% COMPLETADO</span>
+</div>
+<div class="w-full h-3.5 bg-surface-container-highest rounded-full overflow-hidden p-0.5 shadow-inner">
+<div class="h-full bg-gradient-to-r from-secondary to-primary-container rounded-full relative w-[70%] transition-all duration-500 shadow-[0_1px_2px_rgba(0,0,0,0.15)]">
+<div class="absolute top-0 left-0 right-0 h-[2px] bg-white/40 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Stats Cluster: Lifes & Combo Streak -->
+<div class="flex items-center gap-2">
+<!-- Combo Badge -->
+<div class="hidden sm:flex items-center gap-1 bg-surface-container px-2.5 py-1 rounded-full shadow-[0_2px_0_#c9c4d9]">
+<span class="material-symbols-outlined text-tertiary-container material-symbols-fill text-[18px]">local_fire_department</span>
+<span class="font-label-lg text-label-lg text-tertiary-container font-extrabold">x2</span>
+</div>
+<!-- 4 Hearts Meter -->
+<div class="flex items-center gap-0.5 bg-surface-container-low px-2.5 py-1.5 rounded-full border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-error material-symbols-fill text-[20px] animate-pulse">favorite</span>
+<span class="material-symbols-outlined text-error material-symbols-fill text-[20px]">favorite</span>
+<span class="material-symbols-outlined text-error material-symbols-fill text-[20px]">favorite</span>
+<span class="material-symbols-outlined text-error material-symbols-fill text-[20px]">favorite</span>
+<span class="font-label-md text-label-md text-on-surface ml-1 font-extrabold hidden xs:inline">4</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 max-w-4xl w-full mx-auto px-margin-mobile md:px-margin-tablet py-gutter-md flex flex-col justify-center">
+<!-- Mission Context Track Pill -->
+<div class="flex items-center justify-between mb-3">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline-variant text-primary">
+<span class="material-symbols-outlined text-[16px]">calculate</span>
+<span class="font-label-md text-label-md font-extrabold tracking-wider">MATEMÁTICAS ESPACIALES • NIVEL 4</span>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] material-symbols-fill">bolt</span>
+<span class="font-bold">+20 XP</span>
+</div>
+</div>
+<!-- Central Interactive Bento Card -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_0_#e4e0f3] overflow-hidden mb-gutter-md">
+<!-- Top Colored Subject Bar -->
+<div class="h-2 w-full bg-gradient-to-r from-primary via-primary-container to-secondary-container"></div>
+<div class="p-card-padding-md md:p-card-padding-lg flex flex-col md:flex-row items-center gap-gutter-lg">
+<!-- Mascot & Concept Illustration -->
+<div class="w-full md:w-5/12 flex flex-col items-center">
+<div class="relative w-full max-w-[240px] aspect-square rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant shadow-inner flex items-center justify-center p-2">
+<img class="w-full h-full object-cover rounded-lg" data-alt="A modern, high-contrast digital illustration of an agile friendly culinary robot chef inside a futuristic cosmic kitchen. The robot holds a glowing circular holographic space pizza sliced strictly into 8 equal parts with 3 slices subtly dimmed and 5 slices brightly illuminated in neon cyan and golden cheese tones. Clean crisp geometric shapes, vibrant lighting, bold purple and indigo accents matching an educational game style for kids." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAxWV7_hFXlWIYc0i3Z3k0H_8f_wHbDuJ-nfEv9KPKr2MuyRfQTQtw5FmInpNDyi9mI1c1PgZiCo7J582NpzeU1WavE0z0uFzp7QH63TvO5nFaREpBxicj--Y41XZRth_o2f47WloCfG1wY7VYcnltlaNxJJIEYxDXVLXfdHkQY2Rb_-NeqMzhPWdvJwaHBVP4QEQ_56fRwW73L5sftFFmiLJfZWlWI_eE0N5BkFEIaOZPgN9NpVFcbw"/>
+<!-- Overlay visual fraction tag -->
+<div class="absolute bottom-2 left-2 bg-inverse-surface/90 text-surface-bright px-2.5 py-1 rounded-lg text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary-container">pie_chart</span>
+<span>8 REBANADAS TOTALES</span>
+</div>
+</div>
+</div>
+<!-- Question & Challenge Statement -->
+<div class="w-full md:w-7/12 flex flex-col justify-between">
+<div>
+<span class="font-label-lg text-label-lg text-primary font-extrabold tracking-wide uppercase">Misión: Reparto Espacial</span>
+<h1 class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg text-on-surface mt-1 mb-3">
+              ¿Qué fracción representa las rebanadas de pizza que <span class="text-primary underline decoration-primary/40 decoration-4">sobran</span> si comemos 3 de 8 partes iguales?
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Observa el reparto total del robot chef. Recuerda contar cuántas partes quedan sin consumir en la nave.
+            </p>
+</div>
+<!-- Interactive Robot Hint Pill Button -->
+<div class="mt-4 pt-3 border-t border-surface-variant flex items-center justify-between">
+<button class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container hover:bg-surface-variant text-on-surface active:scale-95 transition-all text-label-md font-label-md border border-outline-variant shadow-[0_2px_0_#c9c4d9]">
+<span class="material-symbols-outlined text-tertiary-fixed-variant material-symbols-fill text-[18px]">lightbulb</span>
+<span>Pista del Robot</span>
+</button>
+<span class="font-label-sm text-label-sm text-outline">TIEMPO ESTIMADO: ~45s</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive 4-Option Choice Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-gutter-md">
+<!-- Option A -->
+<button class="w-full p-4 rounded-xl bg-surface-container-lowest border-2 border-outline-variant shadow-[0_4px_0_#c9c4d9] hover:bg-surface-container-low active:translate-y-1 active:shadow-none transition-all flex items-center justify-between text-left group min-h-[64px]">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center font-title-md text-title-md text-on-surface-variant group-hover:bg-surface-variant">
+            A
+          </div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">3 / 8</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Rebanadas comidas</div>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center"></div>
+</button>
+<!-- Option B: Selected Active State -->
+<button class="w-full p-4 rounded-xl bg-surface-container-lowest border-2 border-primary shadow-[0_4px_0_#4200dd] ring-2 ring-primary/20 flex items-center justify-between text-left relative overflow-hidden min-h-[64px] transition-all">
+<!-- Glow accent on selected state -->
+<div class="absolute inset-x-0 top-0 h-1 bg-primary"></div>
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary font-title-md text-title-md flex items-center justify-center shadow-sm">
+            B
+          </div>
+<div>
+<div class="font-headline-md text-headline-md text-primary font-extrabold tracking-tight">5 / 8</div>
+<div class="font-label-sm text-label-sm text-primary font-bold">Sobran 5 de 8 partes</div>
+</div>
+</div>
+<!-- Checkmark indicator -->
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+</button>
+<!-- Option C -->
+<button class="w-full p-4 rounded-xl bg-surface-container-lowest border-2 border-outline-variant shadow-[0_4px_0_#c9c4d9] hover:bg-surface-container-low active:translate-y-1 active:shadow-none transition-all flex items-center justify-between text-left group min-h-[64px]">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center font-title-md text-title-md text-on-surface-variant group-hover:bg-surface-variant">
+            C
+          </div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">8 / 3</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Inversión impropia</div>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center"></div>
+</button>
+<!-- Option D -->
+<button class="w-full p-4 rounded-xl bg-surface-container-lowest border-2 border-outline-variant shadow-[0_4px_0_#c9c4d9] hover:bg-surface-container-low active:translate-y-1 active:shadow-none transition-all flex items-center justify-between text-left group min-h-[64px]">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center font-title-md text-title-md text-on-surface-variant group-hover:bg-surface-variant">
+            D
+          </div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">1 / 2</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">La mitad de la pizza</div>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center"></div>
+</button>
+</section>
+</main>
+<!-- Bottom Feedback & Primary Action Drawer -->
+<footer class="w-full bg-surface-container-lowest border-t-2 border-surface-variant shadow-[0_-4px_16px_rgba(0,0,0,0.04)] sticky bottom-0 z-40 px-margin-mobile md:px-margin-tablet py-gutter-md">
+<div class="max-w-4xl w-full mx-auto flex flex-col sm:flex-row items-center justify-between gap-gutter-md">
+<!-- Immediate Active Feedback Pill/Card -->
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<div class="w-12 h-12 rounded-xl bg-[#006874] text-white flex items-center justify-center shadow-[0_3px_0_#004f58] shrink-0">
+<span class="material-symbols-outlined text-[28px] material-symbols-fill">verified</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-lg text-title-lg text-on-surface font-extrabold">¡Correcto!</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-extrabold">
+              +20 XP
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            ¡Gran deducción! Si comemos 3 de 8, sobran exactamente 5/8. <span class="font-bold text-primary">Combo x2 activado.</span>
+</p>
+</div>
+</div>
+<!-- High-Energy 3D Tactile Action Button -->
+<button class="w-full sm:w-auto min-w-[220px] h-touch-target-min px-6 py-3 rounded-xl bg-[#006874] text-white font-title-md text-title-md flex items-center justify-center gap-2 shadow-[0_4px_0_#004f58] active:translate-y-1 active:shadow-none transition-all duration-100 hover:brightness-110 shrink-0">
+<span>¡Comprobar respuesta!</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+</body></html>
