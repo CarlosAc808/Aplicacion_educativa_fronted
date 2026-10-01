@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react'
+import { App as CapacitorApp } from '@capacitor/app'
+import { Browser } from '@capacitor/browser'
+import { Capacitor } from '@capacitor/core'
 import api from './api'
 
 const subjects = [
@@ -581,12 +584,40 @@ function App() {
   }, [token])
 
   useEffect(() => {
-    const sessionId = new URLSearchParams(window.location.search).get('stripe_session_id')
-    if (!token || !sessionId) return
-    api.post('/billing/confirm', { session_id: sessionId }).then(({ data }) => {
-      setCurrentUser(data.user)
-      window.history.replaceState({}, '', `${window.location.pathname}#missions`)
+    if (!token) return
+    let active = true
+    const confirmSession = async (sessionId) => {
+      if (!active || !sessionId) return
+      try {
+        const { data } = await api.post('/billing/confirm', { session_id: sessionId })
+        if (!active) return
+        setCurrentUser(data.user)
+        setShowLivesModal(false)
+        window.location.hash = 'missions'
+      } catch {
+        // Keep session active; user can retry after temporary network failure.
+      }
+    }
+    const handleAppUrl = ({ url }) => {
+      try {
+        const callbackUrl = new URL(url)
+        if (callbackUrl.protocol !== 'questacademy:' || callbackUrl.hostname !== 'payment-success') return
+        confirmSession(callbackUrl.searchParams.get('session_id'))
+          .finally(() => Browser.close().catch(() => {}))
+      } catch {
+        // Ignore unrelated or malformed deep links.
+      }
+    }
+    const listener = CapacitorApp.addListener('appUrlOpen', handleAppUrl)
+    CapacitorApp.getLaunchUrl().then((launch) => {
+      if (launch?.url) handleAppUrl({ url: launch.url })
     }).catch(() => {})
+    const webSessionId = new URLSearchParams(window.location.search).get('stripe_session_id')
+    if (webSessionId) confirmSession(webSessionId)
+    return () => {
+      active = false
+      listener.then((handle) => handle.remove())
+    }
   }, [token])
 
   useEffect(() => {
@@ -789,7 +820,8 @@ function LivesEmptyModal({ user, onClose, onPurchased }) {
     setError('')
     try {
       const { data } = await api.post('/billing/checkout')
-      window.location.href = data.url
+      if (Capacitor.isNativePlatform()) await Browser.open({ url: data.url })
+      else window.location.href = data.url
     } catch (requestError) {
       setError(requestError.response?.data?.message || 'No se pudo abrir el pago.')
       setLoading(false)
