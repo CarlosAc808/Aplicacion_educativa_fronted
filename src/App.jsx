@@ -601,7 +601,14 @@ function App() {
     const handleAppUrl = ({ url }) => {
       try {
         const callbackUrl = new URL(url)
-        if (callbackUrl.protocol !== 'questacademy:' || callbackUrl.hostname !== 'payment-success') return
+        if (callbackUrl.protocol !== 'questacademy:') return
+        if (callbackUrl.hostname === 'payment-cancelled') {
+          setShowLivesModal(false)
+          window.location.hash = 'missions'
+          Browser.close().catch(() => {})
+          return
+        }
+        if (callbackUrl.hostname !== 'payment-success') return
         confirmSession(callbackUrl.searchParams.get('session_id'))
           .finally(() => Browser.close().catch(() => {}))
       } catch {

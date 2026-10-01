@@ -15,24 +15,25 @@
   </head>
   <body>
     <main>
-      <h1>Pago completado</h1>
-      <p>Volviendo a Quest Academy. Si la aplicación no abre, pulsa el botón.</p>
+      <h1 id="title">Volviendo a Quest Academy</h1>
+      <p id="message">Si la aplicación no abre, pulsa el botón.</p>
       <a id="open-app" href="/">Abrir Quest Academy</a>
     </main>
     <script>
       const sessionId = new URLSearchParams(window.location.search).get('stripe_session_id')
-      const webReturn = `/?stripe_session_id=${encodeURIComponent(sessionId || '')}#missions`
-      const appReturn = `questacademy://payment-success?session_id=${encodeURIComponent(sessionId || '')}`
+      const cancelled = new URLSearchParams(window.location.search).get('cancelled') === '1'
+      const appReturn = cancelled
+        ? 'questacademy://payment-cancelled'
+        : `questacademy://payment-success?session_id=${encodeURIComponent(sessionId || '')}`
       const openApp = document.getElementById('open-app')
+      document.getElementById('title').textContent = cancelled ? 'Pago cancelado' : 'Pago completado'
+      document.getElementById('message').textContent = cancelled
+        ? 'Volviendo a Quest Academy.'
+        : 'Volviendo a Quest Academy. Si la aplicación no abre, pulsa el botón.'
       openApp.href = appReturn
 
-      if (sessionId && /Android/i.test(navigator.userAgent)) {
-        window.location.href = appReturn
-        window.setTimeout(() => { openApp.href = webReturn }, 1500)
-      } else if (sessionId) {
-        window.location.replace(webReturn)
-      } else {
-        openApp.href = '/#missions'
+      if ((cancelled || sessionId) && /Android/i.test(navigator.userAgent)) {
+        window.location.replace(appReturn)
       }
     </script>
   </body>
